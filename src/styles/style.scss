@@ -1,0 +1,27 @@
+@import './_variables.scss';
+// обнуление
+html, body {
+    height: 100%;
+}
+
+#root {
+    height: 100%;
+}
+
+.App {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    flex: 0 0 $heightHeaderFooter;
+}
+
+.content {
+    flex: 1 0 auto;
+}
+
+.footer {
+    flex: 0 0 $heightHeaderFooter;
+}
