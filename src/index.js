@@ -10,7 +10,8 @@ const root = createRoot(container);
 
 const RAWG_API_KEY = 'a7cbf56b60204b669694535720621edf';
 const getURL = function(apikey = RAWG_API_KEY) {
-  return `https://rawg-video-games-database.p.rapidapi.com/games/the-last-of-us-part-i?key=${apikey}`;
+  return `https://rawg-video-games-database.p.rapidapi.com/games/bioshock-infinite?key=${apikey}`;
+  // return `https://rawg-video-games-database.p.rapidapi.com/games/the-last-of-us-part-i?key=${apikey}`;
 }
 
 const fetchMetacritic = async function() {

@@ -1,7 +1,7 @@
 import { games } from "../../App";
 import { Card } from "./Card";
 
-export function CardsSet(props) {
+export function CardSet(props) {
     return (
         <div className="cards">
             <h5>Подборка от автора приложения</h5>
