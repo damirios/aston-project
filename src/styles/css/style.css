@@ -43,16 +43,22 @@ a {
 }
 
 .footer {
-  flex: 0 0 60px;
+  flex: 0 0 80px;
 }
 
 .header {
-  flex: 0 0 60px;
+  flex: 0 0 80px;
 }
 .header__row {
   display: flex;
   align-items: center;
   height: 100%;
+}
+.header__logo {
+  display: block;
+}
+.header__logo img {
+  max-height: 50px;
 }
 
 .cards ul {

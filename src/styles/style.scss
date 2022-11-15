@@ -59,6 +59,14 @@ a {
         align-items: center;
         height: 100%;
     }
+
+    &__logo {
+        display: block;
+
+        & img {
+            max-height: 50px;
+        }
+    }
 }
 // =======================================
 // Cards ================================= 
