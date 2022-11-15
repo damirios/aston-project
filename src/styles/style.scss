@@ -11,8 +11,18 @@ ul {
     padding: 0;
 }
 
+a {
+    text-decoration: none;
+}
+
+// Общие стили
+
 #root {
     height: 100%;
+}
+
+.not-found {
+    flex: 1 0 auto;
 }
 
 .container {
@@ -28,10 +38,6 @@ ul {
     flex-direction: column;
 }
 
-.header {
-    flex: 0 0 $heightHeaderFooter;
-}
-
 .content {
     flex: 1 0 auto;
 }
@@ -44,6 +50,17 @@ ul {
     flex: 0 0 $heightHeaderFooter;
 }
 
+// Header ================================
+.header {
+    flex: 0 0 $heightHeaderFooter;
+
+    &__row {
+        display: flex;
+        align-items: center;
+        height: 100%;
+    }
+}
+// =======================================
 // Cards ================================= 
 .cards {
     & ul {
@@ -245,3 +262,4 @@ ul {
     }
 }
 // =======================================
+

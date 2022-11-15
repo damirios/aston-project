@@ -5,6 +5,7 @@ import { AddToFavoriteButton } from "../../utilities/AddToFavoriteButton";
 import { AuthorizationLink } from "../../utilities/AuthorizationLink";
 import { getFormattedDate } from "../../utilitieFunctions/getFormattedDate";
 import { getMetaColor } from "../../utilitieFunctions/getMetaColor";
+import { NotFound } from "../NotFound";
 
 
 export function FullCard() {
@@ -68,8 +69,6 @@ export function FullCard() {
         );
     }
     return (
-        <div>
-            Извини! Игры с ID {selectedID} нет
-        </div>
+        <NotFound />
     );
 }

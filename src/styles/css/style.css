@@ -9,8 +9,16 @@ ul {
   padding: 0;
 }
 
+a {
+  text-decoration: none;
+}
+
 #root {
   height: 100%;
+}
+
+.not-found {
+  flex: 1 0 auto;
 }
 
 .container {
@@ -26,10 +34,6 @@ ul {
   flex-direction: column;
 }
 
-.header {
-  flex: 0 0 60px;
-}
-
 .content {
   flex: 1 0 auto;
 }
@@ -40,6 +44,15 @@ ul {
 
 .footer {
   flex: 0 0 60px;
+}
+
+.header {
+  flex: 0 0 60px;
+}
+.header__row {
+  display: flex;
+  align-items: center;
+  height: 100%;
 }
 
 .cards ul {

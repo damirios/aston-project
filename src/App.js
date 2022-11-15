@@ -7,6 +7,7 @@ import { Header } from './components/Header';
 import { Footer } from './components/Footer';
 import { Content } from './components/Content';
 import { Card } from './components/cards/Card';
+import { NotFound } from './components/NotFound';
 
 
 
@@ -49,7 +50,8 @@ export const games = [TLOU, Bioshock_Infinite];
 export const gamesIDs = games.map(game => game.id);
 
 
-function App() {
+function App(props) {
+
     return (
         <div className="App">
             <Router>
@@ -57,6 +59,7 @@ function App() {
                 <Routes>
                     <Route path='/' element={<Content />} />
                     <Route path='/games/:id' element={<Card />} />
+                    <Route path='*' element={<NotFound />} />
                 </Routes>
                 <Footer />
             </Router>
