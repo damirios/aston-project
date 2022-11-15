@@ -1,14 +1,13 @@
-import { CardsSet } from "./cards/CardsSet";
+import { CardSet } from "./cards/CardSet";
 
 export function Content() {
-
     return (
-        <main className="content">
+        <div className="content">
             <div className="container">
-                <div className="content-restricted">
-                    <CardsSet />
+                <div className="content__width-restricted">
+                    <CardSet />
                 </div>
             </div>
-        </main>
+        </div>
     );
 }
