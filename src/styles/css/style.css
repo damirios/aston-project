@@ -50,6 +50,18 @@ a {
   padding: 20px 0;
 }
 
+.empty, .occupied, .doesNotMatch, .wrongLogin, .wrongPassword {
+  border: 1px solid red;
+}
+
+.doesNotMatch {
+  border: 1px solid red;
+}
+
+.occupied {
+  border: 1px solid red;
+}
+
 .footer {
   flex: 0 0 80px;
   box-shadow: 0px -2px 3px #777;
@@ -68,7 +80,12 @@ a {
 .header__row {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   height: 100%;
+}
+.header__list {
+  display: flex;
+  column-gap: 15px;
 }
 .header__logo {
   display: block;
@@ -309,4 +326,30 @@ a {
 }
 .search-form__link:hover {
   color: rgb(255, 221, 0);
+}
+
+.sign-page {
+  padding: 40px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.sign-page__form {
+  display: flex;
+  flex-direction: column;
+  row-gap: 30px;
+  background-color: rgba(51, 51, 51, 0.732);
+  padding: 10px 30px;
+}
+.sign-page__item {
+  column-gap: 10px;
+  position: relative;
+}
+.sign-page__input:focus {
+  outline: none;
+}
+.sign-page__input-error {
+  position: absolute;
+  font-size: 12px;
+  color: red;
 }

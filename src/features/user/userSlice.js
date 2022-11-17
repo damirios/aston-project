@@ -1,10 +1,18 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = {
-    authStatus: 'notAuthorized', // or authorized
-    favorites: {}, // fields: id, title, developer, genres, platforms, metascore, img
-    history: {}
-};
+import { getInfoFromLS } from "../../utilitieFunctions/localStorageActions";
+import { setInitialUserState } from "../../utilitieFunctions/setInitialUsersState";
+
+const LSContent = getInfoFromLS();
+// console.log(LSContent);
+
+const initialState = setInitialUserState(LSContent);
+
+// const initialState = {
+//     authStatus: 'notAuthorized', // or authorized
+//     favorites: {}, // fields: id, title, developer, genres, platforms, metascore, img
+//     history: {}
+// };
 
 const userSlice = createSlice({
     name: 'user',
@@ -32,5 +40,13 @@ const userSlice = createSlice({
         }
     }
 });
+
+export const {
+    loggedIn,
+    loggedOut,
+    addedFavorite,
+    deletedFavorite,
+    addedToHistory
+} = userSlice.actions;
 
 export default userSlice.reducer;
