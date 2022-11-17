@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 export function AuthorizationLink() {
     return (
-        <Link to='/' className="auth">
+        <Link to='/auth' className="auth">
             this is authorization link
         </Link>
     );
