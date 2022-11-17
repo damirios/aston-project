@@ -69,18 +69,24 @@ export function SignInUpPage() {
             const password = formData.get('password');
             const newUser = {login, password};
 
-            const LSContent = JSON.parse(localStorage.getItem('users'));
+            const users = JSON.parse(localStorage.getItem('users'));
 
-            if (!LSContent) {
+            if (!users) {
                 addNewUserToLocalStorage(newUser, true);
+                addOnlineStatusOnLS(newUser);
+                dispatch(loggedIn());
+                navigate('/');
             } else {
-                if (Object.keys(LSContent.users).includes(login)) {
+                if (Object.keys(users).includes(login)) {
                     setErrorFields({
                         ...formStatus,
                         login: 'occupied'
                     });
                 } else {
                     addNewUserToLocalStorage(newUser);
+                    addOnlineStatusOnLS(newUser);
+                    dispatch(loggedIn());
+                    navigate('/');
                 }
             }
         }
