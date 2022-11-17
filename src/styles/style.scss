@@ -23,6 +23,10 @@ a {
 
 .not-found {
     flex: 1 0 auto;
+    background-image: url('../../assets/images/background.png');
+    background-repeat: repeat;
+    background-size: 250px 250px;
+    background-color: $backgroundColor;
 }
 
 .container {
@@ -40,19 +44,34 @@ a {
 
 .content {
     flex: 1 0 auto;
+    background-image: url('../../assets/images/background.png');
+    background-repeat: repeat;
+    background-size: 250px 250px;
+    background-color: $backgroundColor;
+    
 }
 
 .content__width-restricted {
     padding: 20px 0;
 }
 
+// Footer ================================
 .footer {
     flex: 0 0 $heightHeaderFooter;
+    box-shadow: 0px -2px 3px #777;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+// =======================================
 
 // Header ================================
 .header {
     flex: 0 0 $heightHeaderFooter;
+    background-color: #fff;
+    box-shadow: 0px 2px 3px #777;
+    position: relative;
 
     &__row {
         display: flex;
@@ -74,19 +93,20 @@ a {
     & ul {
         display: grid;
         gap: 20px;
-        grid-template-columns: repeat(auto-fill, minmax(200px, 300px));
+        grid-template-columns: repeat(auto-fill, minmax(200px, 250px));
     }
 }
 // =======================================
-
 
 // Mini Card =============================
 .card_mini {
     display: flex;
     flex-direction: column;
+    background-color: #fff;
+    border-radius: 5px;
     // .card_mini__image
     &__image {
-        flex: 0 0 300px;
+        flex: 0 0 150px;
         overflow: hidden;
         border-radius: 5px;
         
@@ -157,17 +177,19 @@ a {
 // Game Page =============================
 .game-page {
     flex: 1 0 auto;
-    background-color: #999;
     padding: 20px 0;
 
     // .game-page__grid
     &__grid {
         display: grid;
-        grid-template-rows: 60px 2fr minmax(100px, 1fr);
-        grid-template-columns: 2fr 3fr;
+        grid-template-rows: 60px 1fr minmax(100px, 1fr);
+        grid-template-columns: 1fr 1fr;
         border-radius: 10px;
+        row-gap: 10px;
         overflow: hidden;
-        background-color: #fff;
+        background-color: rgba(255, 255, 255, 0.85);
+        max-width: 900px;
+        margin: 0 auto;
     }
 
     // .game-page__controls
@@ -176,12 +198,14 @@ a {
         background-color: #eee;
         display: flex;
         align-items: center;
-        padding: 5px 20px;
+        padding: 5px 10px;
+        border-radius: 5px;
     }
 
     // .game-page__image
     &__image {
         grid-area: 2 / 1 / 3 / 2;
+        padding: 0 10px;
         // background-color: #0ff;
         
         & img {
@@ -270,4 +294,97 @@ a {
     }
 }
 // =======================================
+
+// Search Form ===========================
+.search-form {
+    min-height: 0;
+    width: 100%;
+    // .search-form__form
+    &__form {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        column-gap: 20px;
+    }
+
+    // .search-form__input
+    &__input {
+        flex: 0 0 70%;
+        height: 40px;
+        padding: 5px 8px;
+        border-radius: 7px;
+        border: 2px solid #333;
+        font-size: 20px;
+        font-weight: 500;
+    }
+
+    // .search-form__submit-button
+    &__submit-button {
+        flex: 0 1 150px;
+        border-radius: 7px;
+        border: 2px solid #777;
+        cursor: pointer;
+        box-shadow: 1px 2px 3px #300;
+        &:active {
+            position: relative;
+            top: 2px;
+            box-shadow: 0px 0px 3px #300;
+        }
+    }
+
+    // .search-form__drop-down
+    &__drop-down {
+        position: absolute;
+        z-index: 2;
+        top: 100%;
+        min-width: 400px;
+        left: 0;
+        background-color: rgba(37, 37, 37, 0.723);
+        padding: 10px 20px;
+        border-radius: 10px;
+    }
+
+    // .search-form__list
+    &__list {
+        display: flex;
+        flex-direction: column;
+        row-gap: 10px;
+    }
+
+    // .search-form__item
+    &__item {
+        padding-bottom: 5px;
+        border-bottom: 2px solid #fff;
+    }
+
+    &__image {
+        width: 40px;
+        height: 50px;
+        object-fit: cover;
+    }
+
+    &__preloader {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    // .search-form__link
+    &__link {
+        display: flex;
+        align-items: center;
+        column-gap: 15px;
+        color: #fff;
+        font-weight: 700;
+        font-size: 20px;
+        letter-spacing: 0.5px;
+        transition: all 0.2s ease 0s;
+
+        &:hover {
+            color: rgb(255, 221, 0);   
+        }
+    }
+}
 

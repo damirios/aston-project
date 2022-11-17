@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { games } from "../../App";
+import { games } from "../games/gamesSlice";
 
 const gamesObject = {};
 
