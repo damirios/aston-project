@@ -11,7 +11,7 @@ export function MiniCard(props) {
             <div className="card_mini__info">
             <div className="card_mini__title">{game.title}</div>
                 <div className="card_mini__developer-release">
-                    {game.developer}, <span>{game.release}</span>
+                    Release: <span>{game.release}</span>
                 </div>
                 <div className="card_mini__metascore">
                     Metascore: <span className={`metacolor__${color}`}>{game.metascore}</span>

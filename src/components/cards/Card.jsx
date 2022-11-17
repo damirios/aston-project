@@ -1,7 +1,7 @@
 import { FullCard } from "./FullCard";
 import { MiniCard } from "./MiniCard";
 
-export function Card(props) {
+function Card(props) {
 
     const { mini, game } = props;
     if (mini) { // миниатюра (для отображения на главной странице)
@@ -13,3 +13,5 @@ export function Card(props) {
         <FullCard />
     );
 }
+
+export default Card;

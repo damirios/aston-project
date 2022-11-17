@@ -21,7 +21,7 @@ export function FullCard() {
         const { title, release, developer, genres, imageSRC, platforms, metascore, description } = games[selectedID];
         
         return (
-            <div className="game-page">
+            <div className="game-page content">
                 <div className="container">
                     <div className="game-page__grid">
                         <div className="game-page__controls">
@@ -32,7 +32,7 @@ export function FullCard() {
                         </div>
                         <div className="game-page__common-info">
                             <div className="game-page__title">{title}</div>
-                            <div className="game-page__developer"><span>Developer: </span>{developer}</div>
+                            {/* <div className="game-page__developer"><span>Developer: </span>{developer}</div> */}
                             <div className="game-page__release">
                                 <span>Release date: </span>{getFormattedDate(release)}
                             </div>
