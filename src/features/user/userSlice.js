@@ -1,7 +1,8 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
-import { getInfoFromLS } from "../../utilitieFunctions/localStorageActions";
+import { getInfoFromLS, getFavoriteGamesFromLS } from "../../utilitieFunctions/localStorageActions";
 import { setInitialUserState } from "../../utilitieFunctions/setInitialUsersState";
+
 
 const LSContent = getInfoFromLS();
 // console.log(LSContent);
@@ -38,7 +39,17 @@ const userSlice = createSlice({
         addedToHistory(state, action) {
             
         }
+    },
+    extraReducers: builder => {
+        builder
+            .addCase(fetchFavoriteGames.pending, (state, action) => {
+                console.log('pending');
+            })
+            .addCase(fetchFavoriteGames.fulfilled, (state, action) => {
+                state.favorites = action.payload;
+            })
     }
+    
 });
 
 export const {
@@ -50,3 +61,14 @@ export const {
 } = userSlice.actions;
 
 export default userSlice.reducer;
+
+// имитирую запрос к серверу, чтобы получить избранное
+export const fetchFavoriteGames = createAsyncThunk('user/fetchFavoriteGames', async () => {
+    const response = new Promise( (res, rej) => {
+        setTimeout(() => {
+            const games = getFavoriteGamesFromLS();
+            res(games);
+        }, 500);
+    });
+    return response;
+});

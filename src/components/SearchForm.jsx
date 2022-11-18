@@ -30,6 +30,7 @@ export function SearchForm() {
         e.preventDefault();
         
         dispatch(gamesCardsFilled());
+        setText('');
     }
 
     return (

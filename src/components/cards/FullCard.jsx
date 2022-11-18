@@ -1,8 +1,8 @@
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 
-import { AddToFavoriteButton } from "../../utilities/AddToFavoriteButton";
-import { AuthorizationLink } from "../../utilities/AuthorizationLink";
+import { AddToFavoriteButton } from "../../utilityComponents/AddToFavoriteButton";
+import { AuthorizationLink } from "../../utilityComponents/AuthorizationLink";
 import { getFormattedDate } from "../../utilitieFunctions/getFormattedDate";
 import { getMetaColor } from "../../utilitieFunctions/getMetaColor";
 import { NotFound } from "../NotFound";
@@ -18,14 +18,14 @@ export function FullCard() {
     const selectedID = +params.id;
 
     if (games.hasOwnProperty(selectedID)) {
-        const { title, release, developer, genres, imageSRC, platforms, metascore, description } = games[selectedID];
+        const { title, release, genres, imageSRC, platforms, metascore, description } = games[selectedID];
         
         return (
             <div className="game-page content">
                 <div className="container">
                     <div className="game-page__grid">
                         <div className="game-page__controls">
-                            {isAuthorized ? <AddToFavoriteButton /> : <AuthorizationLink />}
+                            {isAuthorized ? <AddToFavoriteButton game={games[selectedID]} /> : <AuthorizationLink />}
                         </div>
                         <div className="game-page__image">
                             <img src={imageSRC} alt="game-image" />
