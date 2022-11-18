@@ -10,9 +10,9 @@ import { Content } from './components/Content';
 import Card from './components/cards/Card';
 import { NotFound } from './components/NotFound';
 import { SignInUpPage } from './components/SignInUpPage';
+import { Favorites } from './components/Favorites';
 
 function App(props) {
-
     const {authStatus} = useSelector(state => state.user);
     return (
         <div className="App">
@@ -23,6 +23,8 @@ function App(props) {
                     <Route path='/games/:id' element={<Card />} />
                     <Route path='/auth' element={authStatus === 'authorized' ? <Navigate replace to='/' /> : 
                         <SignInUpPage />} />
+                    <Route path='/favorites' element={authStatus !== 'authorized' ? <Navigate replace to='/' /> : 
+                        <Favorites />} />
                     <Route path='*' element={<NotFound />} />
                 </Routes>
                 <Footer />

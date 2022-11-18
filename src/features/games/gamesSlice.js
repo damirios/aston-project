@@ -147,7 +147,6 @@ const gamesSlice = createSlice({
         },
         gamesStatusLoading(state, action) {
             state.status = 'loading';
-            console.log('here');
         },
         gamesStatusLoaded(state, action) {
             state.status = 'loaded';
@@ -198,7 +197,7 @@ export const fetchGames = createAsyncThunk('games/fetchGames', async text => {
                     return false;
                 });
                 res(filteredGames);
-            }, 1500);
+            }, 500);
         });
         return response;
     }

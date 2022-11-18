@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import { formValidity } from "../utilitieFunctions/formValidity";
 import { Input } from "./UIComponents/Input";
 import { addNewUserToLocalStorage, addOnlineStatusOnLS } from "../utilitieFunctions/localStorageActions";
-import { loggedIn } from "../features/user/userSlice";
+import { loggedIn, fetchFavoriteGames } from "../features/user/userSlice";
 
 export function SignInUpPage() {
     const navigate = useNavigate();
@@ -32,12 +32,13 @@ export function SignInUpPage() {
             const enteringUser = {login, password};
 
             const registeredUsers = JSON.parse(localStorage.getItem('users'));
-            
-            if (Object.keys(registeredUsers).includes(enteringUser.login)) {
+
+            if (registeredUsers && Object.keys(registeredUsers).includes(enteringUser.login)) {
                 const currentUser = registeredUsers[enteringUser.login];
                 if (currentUser.password === password) {
                     dispatch(loggedIn());
                     addOnlineStatusOnLS(currentUser);
+                    dispatch(fetchFavoriteGames());
                     navigate('/');
                 } else {
                     setErrorFields({

@@ -27,6 +27,19 @@ a {
     background-repeat: repeat;
     background-size: 250px 250px;
     background-color: $backgroundColor;
+    font-size: 40px;
+
+    &__link {
+        font-size: 40px;
+        font-weight: 700;
+        color: rgb(225, 70, 19);
+        text-decoration: underline;
+        transition: all 0.3s ease 0s;
+
+        &:hover {
+            color:rgb(255, 221, 0);
+        }
+    }
 }
 
 .container {
@@ -95,6 +108,7 @@ a {
 
     &__list {
         display: flex;
+        align-items: center;
         column-gap: 15px;
     }
 
@@ -105,10 +119,45 @@ a {
             max-height: 50px;
         }
     }
+
+    &__link {
+        font-size: 20px;
+        font-weight: 700;
+        color: rgb(0, 187, 31);
+        transition: all 0.4s ease 0s;
+        
+        &:hover {
+            text-decoration: underline;
+            color:rgb(255, 221, 0);
+        }
+    }
+
+    &__quit {
+        height: 30px;
+        border-radius: 5px;
+        border: 2px solid #777;
+        font-size: 16px;
+        cursor: pointer;
+        outline: none;
+        box-shadow: 1px 2px 3px #000;
+
+        &:active {
+            position: relative;
+            top: 2px;
+            box-shadow: 0 0 1px #000;
+        }
+    }
 }
 // =======================================
 // Cards ================================= 
 .cards {
+    &__title {
+        color: rgb(18, 1, 171);
+        font-size: 24px;
+        margin: 20px 0;
+        line-height: 120%;
+    }
+
     & ul {
         display: grid;
         gap: 20px;

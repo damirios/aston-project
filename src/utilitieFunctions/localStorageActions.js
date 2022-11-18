@@ -5,8 +5,8 @@ export function addNewUserToLocalStorage(user, isLocalStorageEmpty = false) {
         LSContent = {
             [login]: {
                 ...user,
-                favorites: [],
-                history: []
+                favorites: {},
+                history: {}
             }
         }
     } else {
@@ -14,8 +14,8 @@ export function addNewUserToLocalStorage(user, isLocalStorageEmpty = false) {
             ...LSContent,
             [login]: {
                 ...user,
-                favorites: [],
-                history: []
+                favorites: {},
+                history: {}
             }
         }
     }
@@ -44,4 +44,43 @@ export function getInfoFromLS() {
         online: LSOnline,
         users: LSUsers
     }
+}
+
+export function addFavoriteGameToLS(game) {
+    const LSUsers = JSON.parse(localStorage.getItem('users'));
+    const LSOnline = JSON.parse(localStorage.getItem('online'));
+    const currentUser = LSUsers[LSOnline.login];
+    const newUsers = {
+        ...LSUsers,
+        [LSOnline.login]: {
+            login: currentUser.login,
+            password: currentUser.password,
+            favorites: {
+                ...currentUser.favorites,
+                [game.id]: game
+            },
+            history: {
+                ...currentUser.history,
+            }
+        }
+    };
+
+    localStorage.setItem('users', JSON.stringify(newUsers));
+}
+
+export function removeFavoriteGameFromLS(gameID) {
+    const LSUsers = JSON.parse(localStorage.getItem('users'));
+    const LSOnline = JSON.parse(localStorage.getItem('online'));
+    const currentUser = LSUsers[LSOnline.login];
+    delete currentUser.favorites[gameID];
+
+    localStorage.setItem('users', JSON.stringify(LSUsers));
+}
+
+export function getFavoriteGamesFromLS() {
+    const LSUsers = JSON.parse(localStorage.getItem('users'));
+    const LSOnline = JSON.parse(localStorage.getItem('online'));
+    const currentUser = LSUsers[LSOnline.login];
+    const favorites = Object.values(currentUser.favorites);
+    return favorites;
 }

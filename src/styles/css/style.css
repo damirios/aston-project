@@ -23,6 +23,17 @@ a {
   background-repeat: repeat;
   background-size: 250px 250px;
   background-color: rgb(190, 190, 190);
+  font-size: 40px;
+}
+.not-found__link {
+  font-size: 40px;
+  font-weight: 700;
+  color: rgb(225, 70, 19);
+  text-decoration: underline;
+  transition: all 0.3s ease 0s;
+}
+.not-found__link:hover {
+  color: rgb(255, 221, 0);
 }
 
 .container {
@@ -85,6 +96,7 @@ a {
 }
 .header__list {
   display: flex;
+  align-items: center;
   column-gap: 15px;
 }
 .header__logo {
@@ -93,7 +105,37 @@ a {
 .header__logo img {
   max-height: 50px;
 }
+.header__link {
+  font-size: 20px;
+  font-weight: 700;
+  color: rgb(0, 187, 31);
+  transition: all 0.4s ease 0s;
+}
+.header__link:hover {
+  text-decoration: underline;
+  color: rgb(255, 221, 0);
+}
+.header__quit {
+  height: 30px;
+  border-radius: 5px;
+  border: 2px solid #777;
+  font-size: 16px;
+  cursor: pointer;
+  outline: none;
+  box-shadow: 1px 2px 3px #000;
+}
+.header__quit:active {
+  position: relative;
+  top: 2px;
+  box-shadow: 0 0 1px #000;
+}
 
+.cards__title {
+  color: rgb(18, 1, 171);
+  font-size: 24px;
+  margin: 20px 0;
+  line-height: 120%;
+}
 .cards ul {
   display: grid;
   gap: 20px;
