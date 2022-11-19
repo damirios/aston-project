@@ -1,20 +1,17 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
-import { getInfoFromLS, getFavoriteGamesFromLS } from "../../utilitieFunctions/localStorageActions";
+import { getInfoFromLS, getFavoriteGamesFromLS, getHistoryFromLS } from "../../utilitieFunctions/localStorageActions";
 import { setInitialUserState } from "../../utilitieFunctions/setInitialUsersState";
 
+import { getNextIndex } from "../../utilitieFunctions/getNextIndex";
 
-const LSContent = getInfoFromLS();
-// console.log(LSContent);
-
-const initialState = setInitialUserState(LSContent);
+const initialState = setInitialUserState(getInfoFromLS());
 
 // const initialState = {
 //     authStatus: 'notAuthorized', // or authorized
 //     favorites: {}, // fields: id, title, developer, genres, platforms, metascore, img
 //     history: {}
 // };
-
 const userSlice = createSlice({
     name: 'user',
     initialState,
@@ -37,16 +34,20 @@ const userSlice = createSlice({
             delete state.favorites[id];
         },
         addedToHistory(state, action) {
-            
+            const index = getNextIndex(state.history);
+            state.history[index + 1] = action.payload;
+        },
+        historyCleared(state, action) {
+            state.history = {};
         }
     },
     extraReducers: builder => {
         builder
-            .addCase(fetchFavoriteGames.pending, (state, action) => {
-                console.log('pending');
+            .addCase(fetchFavoriteGamesAndHistory.pending, (state, action) => {
             })
-            .addCase(fetchFavoriteGames.fulfilled, (state, action) => {
-                state.favorites = action.payload;
+            .addCase(fetchFavoriteGamesAndHistory.fulfilled, (state, action) => {
+                state.favorites = action.payload.games;
+                state.history = action.payload.history;
             })
     }
     
@@ -57,17 +58,21 @@ export const {
     loggedOut,
     addedFavorite,
     deletedFavorite,
-    addedToHistory
+    addedToHistory,
+    historyCleared
 } = userSlice.actions;
 
 export default userSlice.reducer;
 
 // имитирую запрос к серверу, чтобы получить избранное
-export const fetchFavoriteGames = createAsyncThunk('user/fetchFavoriteGames', async () => {
+export const fetchFavoriteGamesAndHistory = createAsyncThunk('user/fetchFavoriteGames', async () => {
     const response = new Promise( (res, rej) => {
         setTimeout(() => {
             const games = getFavoriteGamesFromLS();
-            res(games);
+            const history = getHistoryFromLS();
+            res({
+                games, history
+            });
         }, 500);
     });
     return response;

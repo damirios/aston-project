@@ -3,10 +3,15 @@ import { useSelector, useDispatch } from "react-redux";
 
 import logo from '../assets/images/Logo.png';
 import { loggedOut } from "../features/user/userSlice";
-import { addOfflineStatusOnLS } from "../utilitieFunctions/localStorageActions";
+import { addOfflineStatusOnLS, getInfoFromLS } from "../utilitieFunctions/localStorageActions";
 
-function Menu() {
+function Menu(props) {
     const dispatch = useDispatch();
+
+    let onlineUserLogin = null;
+    if (props.auth === 'authorized') {
+        onlineUserLogin = getInfoFromLS().online.login;
+    }
 
     function handleQuitClick() {
         dispatch(loggedOut());
@@ -16,6 +21,7 @@ function Menu() {
     return (
         <div className="header__menu">
             <ul className="header__list">
+                {onlineUserLogin ? <li className="header__hello">Привет, <span>{onlineUserLogin}</span>. Твоё меню: </li> : null }
                 <li>
                     <Link className="header__link" to='/favorites'>Избранное</Link>
                 </li>
@@ -31,7 +37,7 @@ function Menu() {
 }
 
 export function Header() {
-    const {authStatus} = useSelector(state => state.user);
+    const {authStatus, history} = useSelector(state => state.user);
 
     return (
         <header className="header">
@@ -41,7 +47,7 @@ export function Header() {
                         <img src={logo} alt="Logo" />
                     </Link>
                     <div className="header__authorization">
-                        {authStatus === 'authorized' ? <Menu /> : <Link to='/auth'>Вход/Регистрация</Link>}
+                        {authStatus === 'authorized' ? <Menu auth={authStatus}/> : <Link to='/auth'>Вход/Регистрация</Link>}
                     </div>
                 </div>
             </div>

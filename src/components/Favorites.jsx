@@ -4,6 +4,7 @@ import { ShowGames } from './UIComponents/ShowGames';
 
 export function Favorites(props) {
     const gamesObj = useSelector(state => state.user.favorites);
+    
     const gamesArray = Object.values(gamesObj);
 
     return (
