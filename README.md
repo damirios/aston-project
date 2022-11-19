@@ -4,7 +4,9 @@
 #### Уровень 1
 * Пишем функциональные компоненты c хуками в приоритете над классовыми.
 * Есть четкое разделение на умные и глупые компоненты (https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0, перевод - https://habr.com/ru/post/266559/)
-* Есть рендеринг списков - https://github.com/damirios/aston-project/blob/main/src/components/cards/CardsSet.jsx :heavy_check_mark:
+* Есть рендеринг списков - [Карточки игр](https://github.com/damirios/aston-project/blob/main/src/components/cards/CardsSet.jsx),
+[Избранное](https://github.com/damirios/aston-project/blob/main/src/components/Favorites.jsx),
+[История запросов](https://github.com/damirios/aston-project/blob/main/src/components/History.jsx) :heavy_check_mark:
 * Реализована хотя бы одна форма (https://ru.reactjs.org/docs/forms.html)
 * Есть применение Контекст API (https://ru.reactjs.org/docs/context.html)
 * Есть применение предохранителя (https://ru.reactjs.org/docs/error-boundaries.html)
