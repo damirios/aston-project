@@ -9,18 +9,21 @@ import { NotFound } from "../NotFound";
 import { Screenshot } from "../UIComponents/Screenshot";
 
 
-export function FullCard() {
+export function FullCard(props) {
     const params = useParams();
+    const selectedID = +params.id;
+
     const games = useSelector(state => state.games.cards);
     const gamesIDs = games.map(game => game.id);
+
     const user = useSelector(state => state.user);
-
-    const isAuthorized = user.authStatus === 'authorized';
-
-    const selectedID = +params.id;
+    const favoriteGames = user.favorites;
+    const favoriteGamesIDs = Object.keys(favoriteGames);
     
-    if (gamesIDs.includes(selectedID)) {
-        const game = games.find(game => game.id === selectedID);
+    const isAuthorized = user.authStatus === 'authorized';
+    
+    if (gamesIDs.includes(selectedID) || (isAuthorized && favoriteGamesIDs.includes(selectedID.toString()))) {
+        const game = games.find(game => game.id === selectedID) || favoriteGames[selectedID.toString()];
         const { title, release, genres, imageSRC, platforms, metascore, screenshots } = game;
         
         return (
