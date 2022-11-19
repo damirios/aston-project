@@ -1,6 +1,8 @@
 import { FullCard } from "./FullCard";
 import { MiniCard } from "./MiniCard";
 
+import ErrorBoundary from "../ErrorBoundary";
+
 export function Card(props) {
 
     const { mini, game } = props;
@@ -10,6 +12,8 @@ export function Card(props) {
         );
     }
     return (
-        <FullCard />
+        <ErrorBoundary>
+            <FullCard />
+        </ErrorBoundary>
     );
 }

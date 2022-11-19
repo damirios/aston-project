@@ -471,6 +471,18 @@ a {
         }
     }
 
+    &__auth {
+        font-weight: 700;
+        font-size: 16px;
+        color:rgb(18, 1, 171);
+        transition: all 0.2s ease 0s;
+
+        &:hover {
+            color:rgb(255, 221, 0);
+            text-decoration: underline;
+        }
+    }
+
     &__screenshots {
         grid-area: 3 / 1 / -1 / -1;
         padding: 5px 10px 30px;

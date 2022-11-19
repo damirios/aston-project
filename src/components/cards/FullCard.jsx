@@ -20,17 +20,20 @@ export function FullCard(props) {
     const listGamesIDs = listGames.map(game => game.id);
 
     const user = useSelector(state => state.user);
-    const favoriteGames = user.favorites;
-    const favoriteGamesIDs = Object.keys(favoriteGames);
-    
+    const favoriteGames = Object.values(user.favorites);
+    const favoriteGamesIDs = favoriteGames.map(game => game.id);
     const isAuthorized = user.authStatus === 'authorized';
     
     if ( gamesIDs.includes(selectedID) || listGamesIDs.includes(selectedID) ||
-    (isAuthorized && favoriteGamesIDs.includes(selectedID.toString()))) {
+    (isAuthorized && favoriteGamesIDs.includes(selectedID))) {
         const game = games.find(game => game.id === selectedID) || 
-        listGames.find(game => game.id === selectedID) || favoriteGames[selectedID.toString()];
+        listGames.find(game => game.id === selectedID) || favoriteGames.find(game => game.id === selectedID );
 
-        const { title, release, genres, imageSRC, platforms, metascore, screenshots } = game;
+        let { title, release, genres, imageSRC, platforms, metascore, screenshots } = game;
+
+        if (!release) {
+            release = 'no release date';
+        }
         
         return (
             <div className="game-page content">
