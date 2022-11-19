@@ -11,7 +11,6 @@ export function CardSet(props) {
         title = `Результаты поиска по запросу: "${lastSearchQuery}"`;
     }
 
-
     return (
         <ShowGames title={title} classname='cards' games={cards} />
     );
