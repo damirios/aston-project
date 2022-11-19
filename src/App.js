@@ -13,7 +13,7 @@ import { SignInUpPage } from './components/SignInUpPage';
 import { Favorites } from './components/Favorites';
 import { History } from './components/History';
 
-function App(props) {
+function App() {
     const {authStatus} = useSelector(state => state.user);
     return (
         <div className="App">

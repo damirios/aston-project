@@ -14,7 +14,9 @@ export function MiniCard(props) {
                     Release: <span>{game.release}</span>
                 </div>
                 <div className="card_mini__metascore">
-                    Metascore: <span className={`metacolor__${color}`}>{game.metascore}</span>
+                    Metascore: <span className={`metacolor__${color}`}>{game.metascore === -1 ? 
+                        'No score on MC' : game.metascore
+                    }</span>
                 </div>
             </div>
         </div>

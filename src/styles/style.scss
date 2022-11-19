@@ -89,6 +89,19 @@ a {
     display: flex;
     align-items: center;
     justify-content: center;
+    color: #333;
+    font-weight: 700;
+    font-size: 20px;
+
+    & a {
+        color:rgb(0, 187, 31);
+        transition: all 0.4s ease 0s;
+
+        &:hover {
+            color:rgb(255, 221, 0);
+            text-decoration: underline;
+        }
+    }
 }
 // =======================================
 
@@ -317,7 +330,6 @@ a {
         }
     }
 }
-
 .metacolor {
     &__red {
         background-color: red;
@@ -331,6 +343,10 @@ a {
     }
     &__green {
         background-color: green;
+        color: #fff;
+    }
+    &__no-score {
+        background-color: rgb(37, 37, 37);
         color: #fff;
     }
 }
@@ -454,8 +470,35 @@ a {
             top: 2px;
         }
     }
+
+    &__screenshots {
+        grid-area: 3 / 1 / -1 / -1;
+        padding: 5px 10px 30px;
+    }
 }
 // =======================================
+.screenshots {
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 200px));
+        gap: 15px;
+    }
+
+    &__title {
+        margin: 0 0 10px;
+        font-size: 20px;
+    }
+
+    &__screenshot {
+        & img {
+            border-radius: 5px;
+            max-width: 100%;
+            max-height: 100%;
+            cursor: pointer;
+        }
+    }
+}
+
 
 // Search Form ===========================
 .search-form {

@@ -10,9 +10,14 @@ const tlou = {
     platforms: ['PlayStation 5', 'PC'],
     metascore: 89,
     imageSRC: 'https://media.rawg.io/media/games/71d/71df9e759b2246f9769126c98ac997fc.jpg',
-    description: `Revisit the game that set a new bar for single-player narrative 
-    storytelling with The Last of Us™ and explore a ravaged and hardened world, 
-    where every action has a brutal consequence for Joel and Ellie.`
+    screenshots: [
+        'https://media.rawg.io/media/screenshots/eb5/eb5a0522dbb56b8f698ac3fa8b884341.jpg',
+        'https://media.rawg.io/media/screenshots/b0f/b0f8ff8c24bc46ca70a20ee4b83d9569.jpg',
+        'https://media.rawg.io/media/screenshots/276/276688cddf9531e6cbcccc3368dfa25f.jpg',
+        'https://media.rawg.io/media/screenshots/585/585fd40ad660779a79e2853f3cd7a833.jpg',
+        'https://media.rawg.io/media/screenshots/7cb/7cb256eecd9dd0bb54d4524dc2a9b7ee.jpg',
+        'https://media.rawg.io/media/screenshots/464/464f718f300f321d481b0ac17b1ae9cb.jpg',
+    ]
 }
 const bioshockInfinite = {
     id: 4062,
@@ -23,18 +28,14 @@ const bioshockInfinite = {
     platforms: ['PlayStation 4', 'Xbox 360', 'Switch', 'Linux', 'PC', 'PlayStation 3', 'Xbox One'],
     metascore: 94,
     imageSRC: "https://media.rawg.io/media/games/fc1/fc1307a2774506b5bd65d7e8424664a7.jpg",
-    description: `The third game in the series, Bioshock takes the story of the underwater confinement 
-    within the lost city of Rapture and takes it in the sky-city of Columbia. 
-    Players will follow Booker DeWitt, a private eye with a military past; 
-    as he will attempt to wipe his debts with the only skill he’s good at – finding people. 
-    Aside from obvious story and style differences, this time Bioshock 
-    protagonist has a personality, character, and voice, no longer the protagonist is a silent man, trying to survive.
-    Open and bright level design of Columbia shows industrial colonial America in a seemingly endless carnival. 
-    But Bioshock is not famous for its visuals, but for its story. 
-    Mystery and creative vision of Irrational Games invite players to uncover the secrets of Columbia’s leader - Zachary Comstock 
-    and save Elizabeth, the girl, that’s been locked up in the flying city since her birth.
-    Unique weapons and mechanics of Vigor will make encounters different, 
-    helping players to adjust to the new found mobility and hook shot, making fights fast-paced and imaginative.`
+    screenshots: [
+        'https://media.rawg.io/media/screenshots/bf0/bf07e2c6d2c888d372917d9ef453c8a4.jpg',
+        'https://media.rawg.io/media/screenshots/9d3/9d38833952812ad7888a6dc21699934f.jpg',
+        'https://media.rawg.io/media/screenshots/595/59572d257b6797986e4eabcd1ee023fd.jpg',
+        'https://media.rawg.io/media/screenshots/f71/f71c23eb76f050d6180490e82d58d799.jpg',
+        'https://media.rawg.io/media/screenshots/871/8713411d5332ceb2b4092073a6f5f3f2.jpg',
+        'https://media.rawg.io/media/screenshots/985/985b56daa78e0a23133518d4226e9f97.jpg'
+    ]
 }
 const portal2 = {
     id: 16037,
@@ -44,25 +45,14 @@ const portal2 = {
     platforms: ['Xbox 360', 'Linux', 'macOS', 'PlayStation 3', 'PC', 'Xbox One'],
     metascore: 95,
     imageSRC: "https://media.rawg.io/media/games/328/3283617cb7d75d67257fc58339188742.jpg",
-    description: `Portal 2 is a first-person puzzle game developed by Valve Corporation and released on April 19, 2011 on Steam, 
-    PS3 and Xbox 360. It was published by Valve Corporation in digital form and by Electronic Arts in physical form.
-    Its plot directly follows the first game's, taking place in the Half-Life universe. 
-    You play as Chell, a test subject in a research facility formerly ran by the company Aperture Science, 
-    but taken over by an evil AI that turned upon its creators, GladOS. 
-    After defeating GladOS at the end of the first game but failing to escape the facility, 
-    Chell is woken up from a stasis chamber by an AI personality core, Wheatley, as the unkempt complex is falling apart. 
-    As the two attempt to navigate through the ruins and escape, they stumble upon GladOS, and accidentally re-activate her...    
-    Portal 2's core mechanics are very similar to the first game's ; the player must make their way through several test chambers 
-    which involve puzzles. For this purpose, they possess a Portal Gun, a weapon capable of creating teleportation 
-    portals on white surfaces. This seemingly simple mechanic and its subtleties coupled with the many different puzzle elements 
-    that can appear in puzzles allows the game to be easy to start playing, yet still feature profound gameplay. 
-    The sequel adds several new puzzle elements, such as gel that can render surfaces bouncy or allow you to accelerate when running on them.
-    The game is often praised for its gameplay, its memorable dialogue and writing and its aesthetic. 
-    Both games in the series are responsible for inspiring most puzzle games succeeding them, particularly first-person puzzle games. 
-    The series, its characters and even its items such as the portal gun and the companion cube 
-    have become a cultural icon within gaming communities.
-    Portal 2 also features a co-op mode where two players take on the roles of robots being led through tests by GladOS, 
-    as well as an in-depth level editor.`
+    screenshots: [
+        'https://media.rawg.io/media/screenshots/221/221a03c11e5ff9f765d62f60d4b4cbf5.jpg',
+        'https://media.rawg.io/media/screenshots/173/1737ff43c14f40294011a209b1012875.jpg',
+        'https://media.rawg.io/media/screenshots/b11/b11a2ae0664f0e8a1ef2346f99df26e1.jpg',
+        'https://media.rawg.io/media/screenshots/9b1/9b107a790909b31918ebe2f40547cc85.jpg',
+        'https://media.rawg.io/media/screenshots/d05/d058fc7f7fa6128916c311eb14267fed.jpg',
+        'https://media.rawg.io/media/screenshots/415/41543dcc12dffc8e97d85a56ad42cda8.jpg'
+    ] 
 }
 const tombRaider = {
     id: 14239,
@@ -72,19 +62,15 @@ const tombRaider = {
     platforms: ['Xbox 360', 'PlayStation 3', 'macOS', 'PlayStation 4', 'PC', 'Xbox One'],
     metascore: 86,
     imageSRC: "https://media.rawg.io/media/games/021/021c4e21a1824d2526f925eff6324653.jpg",
-    description: `A cinematic revival of the series in its action third person form, Tomb Rider follows Lara in her 
-    least experience period of life – her youth. Heavily influenced by Naughty Dog’s “Uncharted”, the game is a mix of everything, 
-    from stealth and survival to combat and QTE action scenes.
-    Young Lara Croft arrives on the Yamatai, lost island near Japan, as the leader of the expedition in search of the Yamatai Kingdom, 
-    with a diverse team of specialists. But shipwreck postponed the successful arrival and seemingly forgotten island 
-    is heavily populated with hostile inhabitants, cultists of Solarii Brotherhood.
-    The game will be graphic at times, especially after failed QTE’s during some of the survival scenes, but overall players 
-    will enjoy classic action adventure, reminiscent of the beginning of the series. This game is not a direct sequel or 
-    continuation of existing sub-series within the franchise, but a reboot, 
-    setting up Tomb Raider to represent modern gaming experience.
-    The game has RPG elements and has a world, which you can explore during the story campaign and after the completion. 
-    As well as multiplayer mode, where 2 teams (4 scavengers and 4 survivors) are clashing in 3 game modes while 
-    using weapons and environments from the single-player campaign.`
+    screenshots: [
+        'https://media.rawg.io/media/screenshots/4f9/4f9d5efdecfb63cb99f1baa4c0ceb3bf.jpg',
+        'https://media.rawg.io/media/screenshots/80f/80f373082b2a74da3f9c3fe2b877dcd0.jpg',
+        'https://media.rawg.io/media/screenshots/80f/80f373082b2a74da3f9c3fe2b877dcd0.jpg',
+        'https://media.rawg.io/media/screenshots/a87/a8733e877f8fbe45e4a727c22a06aa2e.jpg',
+        'https://media.rawg.io/media/screenshots/3f9/3f91678c6805a76419fa4ea3a045a909.jpg',
+        'https://media.rawg.io/media/screenshots/417/4170bf07be43a8d8249193883f87f1c1.jpg',
+        'https://media.rawg.io/media/screenshots/2a4/2a4250f83ad9e959d8b4ca9376ae34ea.jpg'
+    ]
 }
 const lifeIsStrange = {
     id: 3439,
@@ -94,16 +80,14 @@ const lifeIsStrange = {
     platforms: ['Xbox 360', 'PlayStation 3', 'PlayStation 4', 'macOS', 'Android', 'Linux', 'iOS', 'PC', 'Xbox One'],
     metascore: 83,
     imageSRC: "https://media.rawg.io/media/games/562/562553814dd54e001a541e4ee83a591c.jpg",
-    description: `Interactive storytelling and plot-heavy games gained popularity, and “Life is Strange” 
-    arrived as teen mystery adventure. The plot will go through the life of Maxine, a teenager in possession of curious power, 
-    allowing her to stop and rewind time, in order to manipulate her surroundings. Max, after the reunion with her friend Chloe, 
-    is on the path to uncovering the secrets of Arcadia Bay. Players will have to deal with puzzle solving 
-    through the fetch quests, in order to change the world around them.
-    The game puts players in situations, where they’re forced to make a moral choice, going through 
-    the decision which may have short-term or long-term consequences. Every choice made by the player will trigger 
-    the butterfly effect, surrounding the first playthrough of the game with a lot of emotional struggle, 
-    thoughtfully crafted by the developers at Dontnod Entertainment. Life is Strange is third person adventure game, 
-    where players might seem just as an observer of the stories, unfolding in front of them.`
+    screenshots: [
+        'https://media.rawg.io/media/screenshots/edf/edfcbdf85f02f871263dabf1b4f0aa87.jpg',
+        'https://media.rawg.io/media/screenshots/4c6/4c6da2f36396d4ed51f82ba6159fa39b.jpg',
+        'https://media.rawg.io/media/screenshots/6aa/6aa56ef1485c8b287a913fa842883daa.jpg',
+        'https://media.rawg.io/media/screenshots/cb1/cb148b52fe857f5b0b83ae9c01f56d8e.jpg',
+        'https://media.rawg.io/media/screenshots/aea/aea38b33b90054f8fe4cc8bb05253b1d.jpg',
+        'https://media.rawg.io/media/screenshots/c1d/c1d6333b2da0f920e8de10c14d3c6093.jpg'
+    ]
 }
 const redDeadRedemption2 = {
     id: 28,
@@ -113,15 +97,14 @@ const redDeadRedemption2 = {
     platforms: ['PlayStation 4', 'PC', 'Xbox One'],
     metascore: 96,
     imageSRC: "https://media.rawg.io/media/games/511/5118aff5091cb3efec399c808f8c598f.jpg",
-    description: `America, 1899. The end of the wild west era has begun as lawmen hunt down the last remaining outlaw gangs. 
-    Those who will not surrender or succumb are killed.
-    After a robbery goes badly wrong in the western town of Blackwater, Arthur Morgan and the Van der Linde gang 
-    are forced to flee. With federal agents and the best bounty hunters in the nation massing on their heels, 
-    the gang must rob, steal and fight their way across the rugged heartland of America in order to survive. 
-    As deepening internal divisions threaten to tear the gang apart, Arthur must make a choice between his own ideals 
-    and loyalty to the gang who raised him.
-    From the creators of Grand Theft Auto V and Red Dead Redemption, Red Dead Redemption 2 is an epic tale of 
-    life in America at the dawn of the modern age.`
+    screenshots: [
+        'https://media.rawg.io/media/screenshots/7b8/7b8895a23e8ca0dbd9e1ba24696579d9.jpg',
+        'https://media.rawg.io/media/screenshots/b8c/b8cee381079d58b981594ede46a3d6ca.jpg',
+        'https://media.rawg.io/media/screenshots/fd6/fd6e41d4c30c098158568aef32dfed35.jpg',
+        'https://media.rawg.io/media/screenshots/2ed/2ed3b2791b3bbed6b98bf362694aeb73.jpg',
+        'https://media.rawg.io/media/screenshots/857/8573b9f4f06a0c112d6e39cdf3544881.jpg',
+        'https://media.rawg.io/media/screenshots/985/985e3e1f1d1af1ab0797d43a95d472cc.jpg'
+    ] 
 }
 
 const initialGames = [tlou, bioshockInfinite, portal2, tombRaider, lifeIsStrange, redDeadRedemption2];
@@ -198,20 +181,39 @@ export const {
 
 export const fetchGames = createAsyncThunk('games/fetchGames', async (params) => {
     const {text, query} = params;
-    const response = new Promise( (res, rej) => {
-        setTimeout(() => {
-            const filteredGames = initialGames.filter(game => {
-                if (game.title.toLowerCase().includes(text)) {
-                    return true;
-                }
-                return false;
-            });
-            res({
-                games: filteredGames,
-                query: query,
-                queryText: text
-            });
-        }, 500);
+
+    const RAWG_API_KEY = process.env.REACT_APP_RAWG_API_KEY;
+    const getURL = function(text, apikey = RAWG_API_KEY) {
+        return `https://api.rawg.io/api/games?key=${apikey}&search=${text}`;
+    }
+
+    const options = {
+        method: 'GET',
+        mode: 'cors'
+    }
+
+    const response = await fetch(getURL(text), options)
+    .then(response => {
+        return response.json();
+    })
+    .then(data => {
+        const results = data.results.map(game => {
+            return {
+                id: game.id,
+                title: game.name,
+                release: game.released,
+                genres: game.genres.map(genre => genre.name),
+                platforms: game.platforms.map(platform => platform.platform.name),
+                metascore: game.metacritic || -1,
+                imageSRC: game.background_image,
+                screenshots: game.short_screenshots.map(screenshot => screenshot.image)
+            };
+        });
+        return {
+            games: results,
+            query,
+            queryText: text
+        };
     });
     return response;
 });
