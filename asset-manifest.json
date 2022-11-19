@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/react-gh-pages/static/css/main.bb673b86.css",
+    "main.js": "/react-gh-pages/static/js/main.d8d57469.js",
+    "static/media/basketball.gif": "/react-gh-pages/static/media/basketball.acaf63a2b6bb431d33f6.gif",
+    "static/media/background.png": "/react-gh-pages/static/media/background.b0a203c7aac60ff297c0.png",
+    "index.html": "/react-gh-pages/index.html",
+    "main.bb673b86.css.map": "/react-gh-pages/static/css/main.bb673b86.css.map",
+    "main.d8d57469.js.map": "/react-gh-pages/static/js/main.d8d57469.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.bb673b86.css",
+    "static/js/main.d8d57469.js"
+  ]
+}
