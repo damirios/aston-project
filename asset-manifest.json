@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/aston-project/static/css/main.636c4696.css",
-    "main.js": "/aston-project/static/js/main.1a2da1d6.js",
+    "main.css": "/aston-project/static/css/main.c93ad025.css",
+    "main.js": "/aston-project/static/js/main.ab8431b4.js",
     "static/js/670.87297d3f.chunk.js": "/aston-project/static/js/670.87297d3f.chunk.js",
     "static/js/131.897092ef.chunk.js": "/aston-project/static/js/131.897092ef.chunk.js",
     "static/media/basketball.gif": "/aston-project/static/media/basketball.acaf63a2b6bb431d33f6.gif",
     "static/media/background.png": "/aston-project/static/media/background.b0a203c7aac60ff297c0.png",
     "index.html": "/aston-project/index.html",
-    "main.636c4696.css.map": "/aston-project/static/css/main.636c4696.css.map",
-    "main.1a2da1d6.js.map": "/aston-project/static/js/main.1a2da1d6.js.map",
+    "main.c93ad025.css.map": "/aston-project/static/css/main.c93ad025.css.map",
+    "main.ab8431b4.js.map": "/aston-project/static/js/main.ab8431b4.js.map",
     "670.87297d3f.chunk.js.map": "/aston-project/static/js/670.87297d3f.chunk.js.map",
     "131.897092ef.chunk.js.map": "/aston-project/static/js/131.897092ef.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.636c4696.css",
-    "static/js/main.1a2da1d6.js"
+    "static/css/main.c93ad025.css",
+    "static/js/main.ab8431b4.js"
   ]
 }
