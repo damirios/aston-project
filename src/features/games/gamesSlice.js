@@ -124,9 +124,7 @@ const redDeadRedemption2 = {
     life in America at the dawn of the modern age.`
 }
 
-export const games = [tlou, bioshockInfinite, portal2, tombRaider, lifeIsStrange, redDeadRedemption2];
-const initialGames = [portal2, portal2, portal2, portal2, portal2, portal2, portal2, portal2, portal2];
-export const gamesIDs = games.map(game => game.id);
+const initialGames = [tlou, bioshockInfinite, portal2, tombRaider, lifeIsStrange, redDeadRedemption2];
 
 const initialState = {
     list: [], // games fetched from api
@@ -202,7 +200,7 @@ export const fetchGames = createAsyncThunk('games/fetchGames', async (params) =>
     const {text, query} = params;
     const response = new Promise( (res, rej) => {
         setTimeout(() => {
-            const filteredGames = games.filter(game => {
+            const filteredGames = initialGames.filter(game => {
                 if (game.title.toLowerCase().includes(text)) {
                     return true;
                 }

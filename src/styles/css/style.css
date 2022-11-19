@@ -147,14 +147,19 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 7px;
+  padding: 10px 30px;
+  margin-bottom: 20px;
+  margin-top: 10px;
 }
 .history__title {
-  color: rgb(18, 1, 171);
+  color: rgb(6, 18, 159);
   font-size: 24px;
   margin: 20px 0;
 }
 .history__title span {
-  color: rgb(232, 56, 25);
+  color: red;
 }
 .history__clear-button {
   padding: 5px 7px;
@@ -181,25 +186,31 @@ a {
   flex-direction: column;
   align-items: start;
   row-gap: 10px;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 7px;
+  padding: 10px 30px;
 }
 .history__item {
   cursor: pointer;
   font-size: 16px;
   font-weight: 700;
   color: rgb(34, 34, 34);
-  border-bottom: 3px solid #fff;
+  border-bottom: 3px solid rgb(101, 101, 101);
   font-size: 20px;
 }
 .history__item span {
-  color: rgb(4, 255, 0);
+  color: rgb(4, 141, 2);
   font-style: italic;
 }
 
 .cards__title {
-  color: rgb(18, 1, 171);
+  color: rgb(6, 18, 159);
   font-size: 24px;
   margin: 20px 0;
   line-height: 120%;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 7px;
+  padding: 10px 30px;
 }
 .cards ul {
   display: grid;
