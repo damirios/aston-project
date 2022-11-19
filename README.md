@@ -7,10 +7,11 @@
 * Есть рендеринг списков - [Карточки игр](https://github.com/damirios/aston-project/blob/main/src/components/cards/CardsSet.jsx),
 [Избранное](https://github.com/damirios/aston-project/blob/main/src/components/Favorites.jsx),
 [История запросов](https://github.com/damirios/aston-project/blob/main/src/components/History.jsx) :heavy_check_mark:
-* Реализована хотя бы одна форма (https://ru.reactjs.org/docs/forms.html)
+* Реализована хотя бы одна форма - [Форма поиска](https://github.com/damirios/aston-project/blob/main/src/components/SearchForm.jsx), 
+[Форма регистрации/входа](https://github.com/damirios/aston-project/blob/main/src/components/SignInUpPage.jsx) :heavy_check_mark:
 * Есть применение Контекст API (https://ru.reactjs.org/docs/context.html)
 * Есть применение предохранителя (https://ru.reactjs.org/docs/error-boundaries.html)
-* Есть хотя бы один кастомный хук (https://ru.reactjs.org/docs/hooks-custom.html)
+* Есть хотя бы один кастомный хук - [useDebounce](https://github.com/damirios/aston-project/blob/main/src/utilitieFunctions/useDebounce.jsx) :heavy_check_mark:
 * Хотя бы несколько компонентов используют PropTypes (https://ru.reactjs.org/docs/typechecking-with-proptypes.html)
-* Поиск не должен триггерить много запросов к серверу (https://ru.reactjs.org/docs/faq-functions.html#how-can-i-prevent-a-function-from-being-called-too-quickly-or-too-many-times-in-a-row)
+* Поиск не должен триггерить много запросов к серверу - Использую кастомный хук [useDebounce](https://github.com/damirios/aston-project/blob/main/src/utilitieFunctions/useDebounce.jsx) :heavy_check_mark:
 * Есть применение lazy + Suspense (https://ru.reactjs.org/docs/code-splitting.html#route-based-code-splitting)
