@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/react-gh-pages/static/css/main.e6c13ad2.css",
-    "main.js": "/react-gh-pages/static/js/main.d8d57469.js",
-    "static/media/basketball.gif": "/react-gh-pages/static/media/basketball.acaf63a2b6bb431d33f6.gif",
-    "index.html": "/react-gh-pages/index.html",
-    "main.e6c13ad2.css.map": "/react-gh-pages/static/css/main.e6c13ad2.css.map",
-    "main.d8d57469.js.map": "/react-gh-pages/static/js/main.d8d57469.js.map"
+    "main.css": "/aston-project/static/css/main.e6c13ad2.css",
+    "main.js": "/aston-project/static/js/main.85738087.js",
+    "static/media/basketball.gif": "/aston-project/static/media/basketball.acaf63a2b6bb431d33f6.gif",
+    "index.html": "/aston-project/index.html",
+    "main.e6c13ad2.css.map": "/aston-project/static/css/main.e6c13ad2.css.map",
+    "main.85738087.js.map": "/aston-project/static/js/main.85738087.js.map"
   },
   "entrypoints": [
     "static/css/main.e6c13ad2.css",
-    "static/js/main.d8d57469.js"
+    "static/js/main.85738087.js"
   ]
 }
