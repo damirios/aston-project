@@ -14,7 +14,10 @@ export function FullCard(props) {
     const selectedID = +params.id;
 
     const games = useSelector(state => state.games.cards);
+    const listGames = useSelector(state => state.games.list);
+    
     const gamesIDs = games.map(game => game.id);
+    const listGamesIDs = listGames.map(game => game.id);
 
     const user = useSelector(state => state.user);
     const favoriteGames = user.favorites;
@@ -22,8 +25,11 @@ export function FullCard(props) {
     
     const isAuthorized = user.authStatus === 'authorized';
     
-    if (gamesIDs.includes(selectedID) || (isAuthorized && favoriteGamesIDs.includes(selectedID.toString()))) {
-        const game = games.find(game => game.id === selectedID) || favoriteGames[selectedID.toString()];
+    if ( gamesIDs.includes(selectedID) || listGamesIDs.includes(selectedID) ||
+    (isAuthorized && favoriteGamesIDs.includes(selectedID.toString()))) {
+        const game = games.find(game => game.id === selectedID) || 
+        listGames.find(game => game.id === selectedID) || favoriteGames[selectedID.toString()];
+
         const { title, release, genres, imageSRC, platforms, metascore, screenshots } = game;
         
         return (

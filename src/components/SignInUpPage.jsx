@@ -97,6 +97,9 @@ export function SignInUpPage() {
         <div className="sign-page content">
             <div className="container">
                 <form className="sign-page__form">
+                    <h2 className="sign-page__title">
+                        Регистрация/вход
+                    </h2>
                     <Input type='text' fieldname='login' error={errorFields.login}/>
                     <Input type='password' fieldname='password' error={errorFields.password}/>
                     <Input type='password' fieldname='confirm' error={errorFields.confirm}/>
