@@ -37,7 +37,7 @@ function Menu(props) {
 }
 
 export function Header() {
-    const {authStatus, history} = useSelector(state => state.user);
+    const {authStatus} = useSelector(state => state.user);
 
     return (
         <header className="header">

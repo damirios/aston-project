@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
 import {HashRouter as Router, Routes, Route, Navigate} from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
@@ -7,11 +7,13 @@ import './styles/css/style.css';
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
 import { Content } from './components/Content';
-import Card from './components/cards/Card';
 import { NotFound } from './components/NotFound';
 import { SignInUpPage } from './components/SignInUpPage';
-import { Favorites } from './components/Favorites';
-import { History } from './components/History';
+import { Card } from './components/cards/Card';
+
+const Favorites = lazy(() => import('./components/Favorites'));
+const History = lazy(() => import('./components/History'));
+
 
 function App() {
     const {authStatus} = useSelector(state => state.user);
@@ -25,9 +27,9 @@ function App() {
                     <Route path='/auth' element={authStatus === 'authorized' ? <Navigate replace to='/' /> : 
                         <SignInUpPage />} />
                     <Route path='/favorites' element={authStatus !== 'authorized' ? <Navigate replace to='/' /> : 
-                        <Favorites />} />
+                        <Suspense fallback={<div>...Loading</div>}><Favorites /></Suspense>} />
                     <Route path='/history' element={authStatus !== 'authorized' ? <Navigate replace to='/' /> : 
-                        <History />} />
+                        <Suspense fallback={<div>...Loading</div>}><History /></Suspense>} />
                     <Route path='*' element={<NotFound />} />
                 </Routes>
                 <Footer />

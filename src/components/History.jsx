@@ -6,7 +6,7 @@ import { fetchGames } from "../features/games/gamesSlice";
 
 import { getInfoFromLS, clearHistoryInLS } from "../utilitieFunctions/localStorageActions";
 
-export function History() {
+export default function History() {
     const { history } = useSelector(state => state.user);
     const historyArray = Object.values(history);
     const isEmpty = !historyArray.length;

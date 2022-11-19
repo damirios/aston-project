@@ -2,7 +2,7 @@ import { useSelector } from 'react-redux';
 
 import { ShowGames } from './UIComponents/ShowGames';
 
-export function Favorites(props) {
+export default function Favorites(props) {
     const gamesObj = useSelector(state => state.user.favorites);
     
     const gamesArray = Object.values(gamesObj);

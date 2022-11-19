@@ -1,6 +1,6 @@
 import {Link} from 'react-router-dom';
 
-import Card from '../cards/Card';
+import { Card } from '../cards/Card';
 
 export function ShowGames(props) {
     const { title, games, classname } = props;
