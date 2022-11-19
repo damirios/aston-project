@@ -2,8 +2,6 @@ import React from 'react';
 import {BrowserRouter as Router, Routes, Route, Navigate} from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
-import './styles/css/style.css';
-
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
 import { Content } from './components/Content';
