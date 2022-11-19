@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import { formValidity } from "../utilitieFunctions/formValidity";
 import { Input } from "./UIComponents/Input";
 import { addNewUserToLocalStorage, addOnlineStatusOnLS } from "../utilitieFunctions/localStorageActions";
-import { loggedIn, fetchFavoriteGames } from "../features/user/userSlice";
+import { loggedIn, fetchFavoriteGamesAndHistory } from "../features/user/userSlice";
 
 export function SignInUpPage() {
     const navigate = useNavigate();
@@ -38,7 +38,7 @@ export function SignInUpPage() {
                 if (currentUser.password === password) {
                     dispatch(loggedIn());
                     addOnlineStatusOnLS(currentUser);
-                    dispatch(fetchFavoriteGames());
+                    dispatch(fetchFavoriteGamesAndHistory());
                     navigate('/');
                 } else {
                     setErrorFields({

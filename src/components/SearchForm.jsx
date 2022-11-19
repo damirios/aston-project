@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
 
-import { fetchGames, gamesCardsFilled, gamesStatusIdle, gamesStatusLoading, gamesListCleared, gamesStatusLoaded } from "../features/games/gamesSlice";
+import { fetchGames, gamesListCleared } from "../features/games/gamesSlice";
 import { SearchDropDown } from "./UIComponents/SearchDropDown";
 
 import useDebounce from "../utilitieFunctions/useDebounce";
+import { addQueryToLSHistory } from "../utilitieFunctions/localStorageActions";
+import { addedToHistory } from "../features/user/userSlice";
 
 export function SearchForm() {
 
@@ -13,13 +14,21 @@ export function SearchForm() {
 
     const dispatch = useDispatch();
     const {list, cards, status} = useSelector(state => state.games);
-    
+    const {history, authStatus} = useSelector(state => state.user);
 
     const debouncedText = useDebounce(text, 700);
     
     useEffect(() => {
-        // запрос к апи
-        dispatch(fetchGames(debouncedText.toLowerCase())); // запрашиваю новый список игр
+        if (debouncedText !== '') {
+            dispatch(fetchGames({
+                text: debouncedText.toLowerCase(),
+                query: false
+            })); // запрашиваю новый список игр
+        }
+        if (text === '') {
+            dispatch(gamesListCleared()); // очищаю выпадающий список, т.к. поле поиска пустое
+        }
+
     }, [debouncedText]);
 
     function handleChange(e) {
@@ -29,8 +38,21 @@ export function SearchForm() {
     function handleSubmit(e) {
         e.preventDefault();
         
-        dispatch(gamesCardsFilled());
-        setText('');
+        if (text !== '') {
+            dispatch(fetchGames({
+                text: text.toLowerCase(),
+                query: true
+            }));
+    
+            if (authStatus === 'authorized') {
+                if (Object.values(history).length === 0 || !Object.values(history).includes(text)) {
+                    addQueryToLSHistory({text: text.toLowerCase().trim()});
+                    dispatch(addedToHistory(text.toLowerCase().trim()));
+                }
+            }
+            
+            setText('');
+        }
     }
 
     return (

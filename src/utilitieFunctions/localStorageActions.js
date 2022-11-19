@@ -1,3 +1,5 @@
+import { getNextIndex } from "./getNextIndex";
+
 export function addNewUserToLocalStorage(user, isLocalStorageEmpty = false) {
     let LSContent = JSON.parse(localStorage.getItem('users'));
     const {login} = user;
@@ -83,4 +85,48 @@ export function getFavoriteGamesFromLS() {
     const currentUser = LSUsers[LSOnline.login];
     const favorites = Object.values(currentUser.favorites);
     return favorites;
+}
+
+export function addQueryToLSHistory(searchParams) {
+    const LSUsers = JSON.parse(localStorage.getItem('users'));
+    const LSOnline = JSON.parse(localStorage.getItem('online'));
+    const currentUser = LSUsers[LSOnline.login];
+    const index = getNextIndex(currentUser.history);
+
+    const newUsers = {
+        ...LSUsers,
+        [LSOnline.login]: {
+            ...currentUser,
+            history: {
+                ...currentUser.history,
+                [index + 1]: searchParams.text
+            }
+        }
+    }
+
+    localStorage.setItem('users', JSON.stringify(newUsers));
+}
+
+export function getHistoryFromLS() {
+    const LSUsers = JSON.parse(localStorage.getItem('users'));
+    const LSOnline = JSON.parse(localStorage.getItem('online'));
+    const currentUser = LSUsers[LSOnline.login];
+    const history = Object.values(currentUser.history);
+    return history;
+}
+
+export function clearHistoryInLS() {
+    const LSUsers = JSON.parse(localStorage.getItem('users'));
+    const LSOnline = JSON.parse(localStorage.getItem('online'));
+    const currentUser = LSUsers[LSOnline.login];
+
+    const newUsers = {
+        ...LSUsers,
+        [LSOnline.login]: {
+            ...currentUser,
+            history: {}
+        }
+    }
+
+    localStorage.setItem('users', JSON.stringify(newUsers));
 }

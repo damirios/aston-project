@@ -125,15 +125,16 @@ const redDeadRedemption2 = {
 }
 
 export const games = [tlou, bioshockInfinite, portal2, tombRaider, lifeIsStrange, redDeadRedemption2];
+const initialGames = [portal2, portal2, portal2, portal2, portal2, portal2, portal2, portal2, portal2];
 export const gamesIDs = games.map(game => game.id);
 
 const initialState = {
     list: [], // games fetched from api
-    cards: [], // games mini cards that will be shown after submitting the search form
-    status: 'idle' // or loading, failed, loaded
+    cards: initialGames, // games mini cards that will be shown after submitting the search form
+    status: 'idle', // or loading, failed, loaded
+    zeroSearches: true,
+    lastSearchQuery: '',
 };
-
-// console.log(initialState);
 
 const gamesSlice = createSlice({
     name: 'games',
@@ -153,6 +154,10 @@ const gamesSlice = createSlice({
         },
         gamesStatusIdle(state, action) {
             state.status = 'idle';
+        },
+        gamesListCleared(state, action) {
+            state.list = [];
+            state.status = 'idle';
         }
     },
     extraReducers: builder => {
@@ -163,11 +168,20 @@ const gamesSlice = createSlice({
             .addCase(fetchGames.fulfilled, (state, action) => {
                 state.status = 'idle';
                 const newState = [];
-                if (action.payload.length !== 0) {
+                const {games, query, queryText} = action.payload;
+                
+                if (games.length !== 0) {
+                    games.forEach(game => newState.push(game));
                     state.status = 'loaded';
-                    action.payload.forEach(game => newState.push(game));
                 }
-                state.list = newState;
+                if (query) {
+                    state.cards = newState;
+                    state.status = 'idle';
+                    state.zeroSearches = false;
+                    state.lastSearchQuery = queryText;
+                } else {
+                    state.list = newState;
+                }
             })
             .addCase(fetchGames.rejected, (state, action) => {
                 state.status = 'failed';
@@ -184,23 +198,24 @@ export const {
 
 } = gamesSlice.actions;
 
-export const fetchGames = createAsyncThunk('games/fetchGames', async text => {
-    if (text === '') {
-        return [];
-    } else {
-        const response = new Promise( (res, rej) => {
-            setTimeout(() => {
-                const filteredGames = games.filter(game => {
-                    if (game.title.toLowerCase().includes(text)) {
-                        return true;
-                    }
-                    return false;
-                });
-                res(filteredGames);
-            }, 500);
-        });
-        return response;
-    }
+export const fetchGames = createAsyncThunk('games/fetchGames', async (params) => {
+    const {text, query} = params;
+    const response = new Promise( (res, rej) => {
+        setTimeout(() => {
+            const filteredGames = games.filter(game => {
+                if (game.title.toLowerCase().includes(text)) {
+                    return true;
+                }
+                return false;
+            });
+            res({
+                games: filteredGames,
+                query: query,
+                queryText: text
+            });
+        }, 500);
+    });
+    return response;
 });
 
 export default gamesSlice.reducer;

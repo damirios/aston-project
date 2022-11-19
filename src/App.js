@@ -11,6 +11,7 @@ import Card from './components/cards/Card';
 import { NotFound } from './components/NotFound';
 import { SignInUpPage } from './components/SignInUpPage';
 import { Favorites } from './components/Favorites';
+import { History } from './components/History';
 
 function App(props) {
     const {authStatus} = useSelector(state => state.user);
@@ -25,6 +26,8 @@ function App(props) {
                         <SignInUpPage />} />
                     <Route path='/favorites' element={authStatus !== 'authorized' ? <Navigate replace to='/' /> : 
                         <Favorites />} />
+                    <Route path='/history' element={authStatus !== 'authorized' ? <Navigate replace to='/' /> : 
+                        <History />} />
                     <Route path='*' element={<NotFound />} />
                 </Routes>
                 <Footer />
