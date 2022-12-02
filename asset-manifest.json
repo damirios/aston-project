@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/aston-project/static/css/main.c93ad025.css",
-    "main.js": "/aston-project/static/js/main.ab8431b4.js",
-    "static/js/670.87297d3f.chunk.js": "/aston-project/static/js/670.87297d3f.chunk.js",
-    "static/js/131.897092ef.chunk.js": "/aston-project/static/js/131.897092ef.chunk.js",
-    "static/media/basketball.gif": "/aston-project/static/media/basketball.acaf63a2b6bb431d33f6.gif",
-    "static/media/background.png": "/aston-project/static/media/background.b0a203c7aac60ff297c0.png",
-    "index.html": "/aston-project/index.html",
-    "main.c93ad025.css.map": "/aston-project/static/css/main.c93ad025.css.map",
-    "main.ab8431b4.js.map": "/aston-project/static/js/main.ab8431b4.js.map",
-    "670.87297d3f.chunk.js.map": "/aston-project/static/js/670.87297d3f.chunk.js.map",
-    "131.897092ef.chunk.js.map": "/aston-project/static/js/131.897092ef.chunk.js.map"
+    "main.css": "/game-reviews/static/css/main.ab0c1e11.css",
+    "main.js": "/game-reviews/static/js/main.a04ecee0.js",
+    "static/js/670.87297d3f.chunk.js": "/game-reviews/static/js/670.87297d3f.chunk.js",
+    "static/js/131.897092ef.chunk.js": "/game-reviews/static/js/131.897092ef.chunk.js",
+    "static/media/basketball.gif": "/game-reviews/static/media/basketball.acaf63a2b6bb431d33f6.gif",
+    "static/media/background.png": "/game-reviews/static/media/background.b0a203c7aac60ff297c0.png",
+    "index.html": "/game-reviews/index.html",
+    "main.ab0c1e11.css.map": "/game-reviews/static/css/main.ab0c1e11.css.map",
+    "main.a04ecee0.js.map": "/game-reviews/static/js/main.a04ecee0.js.map",
+    "670.87297d3f.chunk.js.map": "/game-reviews/static/js/670.87297d3f.chunk.js.map",
+    "131.897092ef.chunk.js.map": "/game-reviews/static/js/131.897092ef.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.c93ad025.css",
-    "static/js/main.ab8431b4.js"
+    "static/css/main.ab0c1e11.css",
+    "static/js/main.a04ecee0.js"
   ]
 }
