@@ -1,7 +1,7 @@
 {
   "name": "aston-project",
   "version": "1.0.0",
-  "homepage": "https://damirios.github.io/aston-project",
+  "homepage": "https://damirios.github.io/game-reviews",
   "private": true,
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.0",
