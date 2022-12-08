@@ -181,7 +181,7 @@ export const {
 export const fetchGames = createAsyncThunk('games/fetchGames', async (params) => {
     const {text, query} = params;
 
-    const RAWG_API_KEY = process.env.REACT_APP_RAWG_API_KEY;
+    const RAWG_API_KEY = process.env.REACT_APP_RAWG_API_KEY || 'a7cbf56b60204b669694535720621edf';
     const getURL = function(text, apikey = RAWG_API_KEY) {
         return `https://api.rawg.io/api/games?key=${apikey}&search=${text}`;
     }
