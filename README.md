@@ -42,7 +42,7 @@
 ### Использованные технологии и языки
 * React
 * Redux
-* JS
+* JavaScript
 * CSS
 * HTML
 
