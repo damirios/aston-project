@@ -1,4 +1,4 @@
-## Game reviews. Выходной проект React-интенсива компании Aston
+## Game Reviews. Выходной проект React-интенсива компании Aston
 
 ## Превью
 <p align="center">
